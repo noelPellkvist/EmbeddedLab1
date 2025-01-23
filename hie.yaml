@@ -1,0 +1,16 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "forsyde-project:lib"
+
+    - path: "./src/SDF_Application.hs"
+      component: "forsyde-project:exe:SDF"
+
+    - path: "./src/ForSyDeModel.hs"
+      component: "forsyde-project:exe:SDF"
+
+    - path: "./src/Main.hs"
+      component: "forsyde-project:exe:SDF"
+
+    - path: "./test"
+      component: "forsyde-project:test:forsyde-project-test"
