@@ -35,15 +35,9 @@ main = do
     let i_1 = infiniteS (+1) 0         -- Generates {0, 1, 2, 3, ...}
     let i_2 = infiniteS (+10) 0 -- Generates {0, 10, 20, 30, ...}
 
-    putStrLn "First 10 values of the i_1 signal:"
-    putStrLn $ show $ take 10 $ fromSignal i_1
-
-    putStrLn "First 10 values of the i_2 signal:"
-    putStrLn $ show $ take 10 $ fromSignal i_2
-
     -- Simulate the system
     let s_out = system i_1 i_2
 
     -- Print the first 10 values of the output signal
-    putStrLn "First 10 values of the output signal:"
+    putStrLn "First 10 values of the output signal with infinite inputs:"
     putStrLn $ show $ take 10 $ fromSignal s_out
