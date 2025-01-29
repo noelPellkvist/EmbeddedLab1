@@ -32,17 +32,17 @@ main = do
     putStrLn "Running the program"
 
     -- Define the infinite signals using infiniteS
-    let i_1 = infiniteS (\i -> i + 1)          -- Generates {0, 1, 2, 3, ...}
-    let i_2 = infiniteS (\i -> i + 10) -- Generates {0, 10, 20, 30, ...}
+    let i_1 = infiniteS (+1) 0         -- Generates {0, 1, 2, 3, ...}
+    let i_2 = infiniteS (+10) 0 -- Generates {0, 10, 20, 30, ...}
 
     putStrLn "First 10 values of the i_1 signal:"
-    putStrLn $ show $ take 10 $ fromSignal (i_1 0)
+    putStrLn $ show $ take 10 $ fromSignal i_1
 
     putStrLn "First 10 values of the i_2 signal:"
-    putStrLn $ show $ take 10 $ fromSignal (i_2 0)
+    putStrLn $ show $ take 10 $ fromSignal i_2
 
     -- Simulate the system
-    let s_out = system (i_1 0) (i_2 0)
+    let s_out = system i_1 i_2
 
     -- Print the first 10 values of the output signal
     putStrLn "First 10 values of the output signal:"
