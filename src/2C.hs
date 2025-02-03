@@ -2,8 +2,8 @@ module Main where
 
 import ForSyDe.Shallow
 
-system :: Signal Int -> Signal Int -> Signal Int
-system s_in1 s_in2 = s_out where
+system :: Signal Int -> Signal Int -> (Signal Int, Signal Int, Signal Int, Signal Int, Signal Int, Signal Int)
+system s_in1 s_in2 = (s_1, s_2, s_3, s_4, s_4_delayed, s_out) where
   s_1 = actor_a s_in1
   s_2 = actor_b s_in2
   s_3 = actor_c s_1 s_4_delayed
@@ -31,13 +31,27 @@ main :: IO ()
 main = do
     putStrLn "Running the program"
 
-    -- Define the infinite signals using infiniteS
-    let i_1 = infiniteS (+1) 0         -- Generates {0, 1, 2, 3, ...}
-    let i_2 = infiniteS (+10) 0 -- Generates {0, 10, 20, 30, ...}
+    let i_1 = signal [0,1,2,3,4,5,6,7,8,9]
+    let i_2 = signal [0,10,20,30,40,50,60,70,80,90]
 
     -- Simulate the system
-    let s_out = system i_1 i_2
+    let (s_1, s_2, s_3, s_4, s_4_delayed, s_out) = system i_1 i_2
 
-    -- Print the first 10 values of the output signal
-    putStrLn "First 10 values of the output signal with infinite inputs:"
-    putStrLn $ show $ take 10 $ fromSignal s_out
+
+    putStrLn "S_1 signal:"
+    putStrLn $ show s_1
+
+    putStrLn "S_2 signal:"
+    putStrLn $ show s_2
+
+    putStrLn "S_3 signal:"
+    putStrLn $ show s_3
+
+    putStrLn "S_4 signal:"
+    putStrLn $ show s_4
+
+    putStrLn "S_4_Delayed signal:"
+    putStrLn $ show s_4_delayed
+
+    putStrLn "Output signal:"
+    putStrLn $ show s_out

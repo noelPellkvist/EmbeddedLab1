@@ -49,8 +49,14 @@ tests:
     - forsyde-project
 
 executables:
-  SDF:
-    main: Main.hs
+  2B:
+    main: 2B.hs
+    source-dirs: src
+    dependencies:
+      - base
+      - forsyde-shallow
+  2C:
+    main: 2C.hs
     source-dirs: src
     dependencies:
       - base
