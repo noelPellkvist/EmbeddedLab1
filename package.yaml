@@ -74,3 +74,10 @@ executables:
     dependencies:
       - base
       - forsyde-shallow
+
+  5A:
+    main: 5A.hs
+    source-dirs: src
+    dependencies:
+      - base
+      - forsyde-shallow
