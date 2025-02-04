@@ -61,3 +61,10 @@ executables:
     dependencies:
       - base
       - forsyde-shallow
+
+  3A:
+    main: 3A.hs
+    source-dirs: src
+    dependencies:
+      - base
+      - forsyde-shallow
