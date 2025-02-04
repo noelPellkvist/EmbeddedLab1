@@ -68,3 +68,9 @@ executables:
     dependencies:
       - base
       - forsyde-shallow
+  4A:
+    main: 4A.hs
+    source-dirs: src
+    dependencies:
+      - base
+      - forsyde-shallow
