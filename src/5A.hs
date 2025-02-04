@@ -14,12 +14,12 @@ d_select = detector11SADF consume_rate next_state select_scenario initial_state
 
     scenario_0 = ( (1, 1)
                  , 1
-                 , \ts fs -> ts   -- read from the first input
+                 , \ts fs -> ts
                  )
 
     scenario_1 = ( (1, 1)
                  , 1
-                 , \ts fs -> fs   -- read from the second input
+                 , \ts fs -> fs
                  )
 
     select_scenario 0 = (1, [scenario_0])
