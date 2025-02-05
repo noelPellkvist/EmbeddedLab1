@@ -81,3 +81,10 @@ executables:
     dependencies:
       - base
       - forsyde-shallow
+
+  8A:
+    main: 8A.hs
+    source-dirs: src
+    dependencies:
+      - base
+      - forsyde-shallow
