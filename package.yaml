@@ -88,3 +88,10 @@ executables:
     dependencies:
       - base
       - forsyde-shallow
+
+  9A:
+    main: 9A.hs
+    source-dirs: src
+    dependencies:
+      - base
+      - forsyde-shallow
