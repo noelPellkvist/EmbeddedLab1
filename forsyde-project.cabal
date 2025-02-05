@@ -134,6 +134,20 @@ executable 9A
     , forsyde-shallow
   default-language: Haskell2010
 
+executable 9B
+  main-is: 9B.hs
+  other-modules:
+      Paths_forsyde_project
+  autogen-modules:
+      Paths_forsyde_project
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base
+    , forsyde-shallow
+  default-language: Haskell2010
+
 test-suite forsyde-project-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
