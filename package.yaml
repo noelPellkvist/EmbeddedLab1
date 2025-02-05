@@ -82,6 +82,13 @@ executables:
       - base
       - forsyde-shallow
 
+  5B:
+    main: 5B.hs
+    source-dirs: src
+    dependencies:
+      - base
+      - forsyde-shallow
+
   8A:
     main: 8A.hs
     source-dirs: src
